@@ -47,7 +47,7 @@ app.get('/employees/:id', (req,res)=>{
 //post employee
 app.post('/employees', (req,res)=>{
 
-	var post  = {id: 1, name: 'Hello MySQL', empid: 'emo007', salary: '25000'};
+	{id: req.params.id, name: req.params.name, empid: req.params.empid, salary: req.params.salary};
 	var query = mysqlConnection.query('INSERT INTO posts SET ?', post, function(err, result) {
 	// Neat! req.params.id
 	if(!err)
